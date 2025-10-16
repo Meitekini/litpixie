@@ -8,7 +8,9 @@ export default function Layout({
   return (
     <section className="flex flex-col min-h-screen antialiased">
       <Banner />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-1 max-w-full bg-blue-400  px-4 pt-20 pb-16">
+        {children}
+      </main>
       <footer className="bg-gray-100">
         <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
           <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">

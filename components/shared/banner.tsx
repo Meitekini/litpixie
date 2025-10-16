@@ -66,7 +66,10 @@ export default function Banner() {
               <circle cx="26" cy="26" r="2.3" fill="#ffffff" opacity="0.9" />
             </svg>
 
-            <Link href="/" className="text-2xl font-bold tracking-wide">
+            <Link
+              href="/"
+              className="hidden sm:block text-2xl font-bold tracking-wide"
+            >
               LitPixel
               <span className="text-yellow-500">Photo</span>
               graphy
@@ -185,24 +188,25 @@ export default function Banner() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg">
+        <h1 className="text-xl  sm:text-2xl md:text-4xl lg:text-7xl font-extrabold mb-4 drop-shadow-lg">
           Elevate Your Experience
         </h1>
+
         <p className="max-w-md md:max-w-2xl text-base md:text-xl mb-8 text-gray-200">
           Discover a new world of innovation, design, and seamless performance.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="#get-started"
-            className="rounded-2xl bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700 transition"
+            className="rounded-2xl bg-yellow-600 px-8 py-3 font-semibold text-white hover:bg-yellow-700 transition"
           >
-            Get Started
+            Contact
           </Link>
           <Link
             href="#learn-more"
-            className="rounded-2xl border border-white px-8 py-3 font-semibold text-white hover:bg-white hover:text-black transition"
+            className="rounded-2xl border border-yellow-600 px-8 py-3 font-semibold text-white hover:bg-white hover:text-black transition"
           >
-            Learn More
+            Portfolio
           </Link>
         </div>
       </motion.div>
