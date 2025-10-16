@@ -17,7 +17,7 @@ export default function RecentWorks() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
   return (
-    <div className="flex flex-col items-start w-full h-full bg-green-500 md:flex-row md:items-center md:gap-8">
+    <div className="flex flex-col items-start w-full h-full bg-green-500  md:gap-8">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl my-4 md:my-8 font-bold text-gray-900 sm:text-4xl">
           Recent Works
