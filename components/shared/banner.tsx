@@ -189,11 +189,11 @@ export default function Banner() {
         transition={{ duration: 1 }}
       >
         <h1 className="text-xl  sm:text-2xl md:text-4xl lg:text-7xl font-extrabold mb-4 drop-shadow-lg">
-          Elevate Your Experience
+          With My Camera
         </h1>
 
         <p className="max-w-md md:max-w-2xl text-base md:text-xl mb-8 text-gray-200">
-          Discover a new world of innovation, design, and seamless performance.
+          I capture real life in a stunning way.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
