@@ -197,13 +197,13 @@ export default function Banner() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
-            href="#get-started"
+            href="#contacts"
             className="rounded-2xl bg-yellow-600 px-8 py-3 font-semibold text-white hover:bg-yellow-700 transition"
           >
             Contact
           </Link>
           <Link
-            href="#learn-more"
+            href="/portfolio"
             className="rounded-2xl border border-yellow-600 px-8 py-3 font-semibold text-white hover:bg-white hover:text-black transition"
           >
             Portfolio

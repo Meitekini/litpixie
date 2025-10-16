@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 // ✅ Photography categories data
 const categories = [
@@ -93,7 +94,7 @@ export default function RecentWorks() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 md:mb-8 space-y-3 sm:space-y-0">
         <h1 className="text-2xl text-gray-700 md:text-3xl font-bold text-center sm:text-left uppercase">
-          Recent Work
+          My Work
         </h1>
         <div className="hidden md:flex items-center justify-center sm:justify-end gap-2">
           <Button
@@ -125,21 +126,23 @@ export default function RecentWorks() {
         <CarouselContent className="-ml-2 md:-ml-4">
           {categories.map((item, index) => (
             <CarouselItem key={index} className="p-1 md:basis-1/2 lg:basis-1/4">
-              <div className="relative bg-gray-100 overflow-hidden shadow-md group">
-                <Image
-                  src={item.image_url}
-                  alt={item.category}
-                  width={1200}
-                  height={700}
-                  className="object-cover w-full h-96 transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6 text-white">
-                  <h2 className="text-xl font-semibold mb-2">
-                    {item.category}
-                  </h2>
-                  <p className="text-sm opacity-90">{item.description}</p>
+              <Link href="">
+                <div className="relative bg-gray-100 overflow-hidden shadow-md group">
+                  <Image
+                    src={item.image_url}
+                    alt={item.category}
+                    width={1200}
+                    height={700}
+                    className="object-cover w-full h-96 transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-6 text-white">
+                    <h2 className="text-xl font-semibold mb-2">
+                      {item.category}
+                    </h2>
+                    <p className="text-sm opacity-90">{item.description}</p>
+                  </div>
                 </div>
-              </div>
+            </Link>
             </CarouselItem>
           ))}
         </CarouselContent>

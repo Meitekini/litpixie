@@ -1,28 +1,32 @@
 import RecentWorks from "@/components/shared/recent-works";
+import Portfolio from "@/components/shared/portfolio";
+import { sampleImages } from "@/types";
 import React from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <section>
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-         
+        <div className=" max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
           <RecentWorks />
         </div>
       </section>
 
-      <section className="bg-white rounded-xl shadow p-6 mb-6">
-        <h2 className="text-xl font-semibold mb-4">Example Fluid Area</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div className="bg-gray-100 p-4 rounded-lg shadow-sm text-center">
-            Block A
-          </div>
-          <div className="bg-gray-100 p-4 rounded-lg shadow-sm text-center">
-            Block B
-          </div>
-          <div className="bg-gray-100 p-4 rounded-lg shadow-sm text-center">
-            Block C
-          </div>
+      <section className="max-w-screen-xl bg-gradient-to-b from-gray-50 via-gray-600 to-gray-50 px-4 py-8 sm:px-6 lg:px-8">
+        <h1 className="mx-12 text-3xl font-semibold text-gray-800 uppercase mt-6 p-4">
+          Portfolio
+        </h1>
+        <Portfolio gallery={sampleImages} />
+        <div className="flex items-center justify-center text-center">
+          <Button
+            asChild
+            variant="outline"
+            className="rounded-2xl border border-yellow-600 px-8 py-3 font-semibold text-gray-600 hover:bg-white hover:text-gray-700 transition"
+          >
+            <Link href="/portfolio ">Load More</Link>
+          </Button>
         </div>
       </section>
 
