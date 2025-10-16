@@ -189,15 +189,16 @@ export default function Banner() {
         transition={{ duration: 1 }}
       >
         <h1 className="text-xl  sm:text-2xl md:text-4xl lg:text-7xl font-extrabold mb-4 drop-shadow-lg">
-          With My Camera
+          Elevate Your <span className="text-yellow-500">Experience
+          </span>
         </h1>
 
         <p className="max-w-md md:max-w-2xl text-base md:text-xl mb-8 text-gray-200">
-          I capture real life in a stunning way.
+          With my camera, I capture real life in a stunning way.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
-            href="#contacts"
+            href=""
             className="rounded-2xl bg-yellow-600 px-8 py-3 font-semibold text-white hover:bg-yellow-700 transition"
           >
             Contact
