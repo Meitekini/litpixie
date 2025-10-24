@@ -14,7 +14,7 @@ export default function Banner() {
   const y = useTransform(scrollY, [0, 500], [0, 150]); // slower background movement
 
   return (
-    <section
+    <section id="mainContent"
       ref={ref}
       className="relative h-[90vh] md:h-[100vh] w-full overflow-hidden"
     >
@@ -70,7 +70,7 @@ export default function Banner() {
               href="/"
               className="hidden sm:block text-2xl font-bold tracking-wide"
             >
-              LitPixel
+              LitPixel {" "}
               <span className="text-yellow-500">Photo</span>
               graphy
             </Link>
@@ -79,18 +79,28 @@ export default function Banner() {
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-8 text-lg">
             <li>
-              <Link href="#features" className="hover:text-gray-300 transition">
-                Features
+              <Link href="/" className="hover:text-gray-300 transition">
+                Home
               </Link>
             </li>
             <li>
-              <Link href="#about" className="hover:text-gray-300 transition">
+              <Link href="/about" className="hover:text-gray-300 transition">
                 About
               </Link>
             </li>
             <li>
-              <Link href="#contact" className="hover:text-gray-300 transition">
+              <Link href="/portfolio" className="hover:text-gray-300 transition">
+                Portfolio
+              </Link>
+            </li>           
+            <li>
+              <Link href="#contacts" className="hover:text-gray-300 transition">
                 Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/login" className="hover:text-gray-300 transition">
+                Login
               </Link>
             </li>
           </ul>
@@ -150,31 +160,36 @@ export default function Banner() {
               <ul className="flex flex-col items-center gap-6 py-6 text-lg">
                 <li>
                   <Link
-                    href="#features"
+                    href="/"
                     onClick={() => setMenuOpen(false)}
                     className="hover:text-gray-300 transition"
                   >
-                    Features
+                    Home
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="#about"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-300 transition"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#contact"
-                    onClick={() => setMenuOpen(false)}
-                    className="hover:text-gray-300 transition"
-                  >
-                    Contact
-                  </Link>
-                </li>
+                 <li>
+              <Link href="/about" className="hover:text-gray-300 transition">
+              onClick={() => setMenuOpen(false)}
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/portfolio" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition">
+              
+                Portfolio
+              </Link>
+            </li>
+          
+            <li>
+              <Link href="#contacts" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="#login" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition">
+                Login
+              </Link>
+            </li>
               </ul>
             </motion.div>
           )}
@@ -188,24 +203,28 @@ export default function Banner() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-xl  sm:text-2xl md:text-4xl lg:text-7xl font-extrabold mb-4 drop-shadow-lg">
+        <motion.h1
+        initial={{opacity:0, x: -100}}
+        animate={{opacity:1, x: 0}}
+        transition={{duration:2}}
+        className="text-xl  sm:text-2xl md:text-4xl lg:text-7xl font-extrabold mb-4 drop-shadow-lg">
           Elevate Your <span className="text-yellow-500">Experience
           </span>
-        </h1>
+        </motion.h1>
 
         <p className="max-w-md md:max-w-2xl text-base md:text-xl mb-8 text-gray-200">
           With my camera, I capture real life in a stunning way.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
-            href=""
-            className="rounded-2xl bg-yellow-600 px-8 py-3 font-semibold text-white hover:bg-yellow-700 transition"
+            href="#contacts"
+            className="rounded-2xl bg-yellow-500 px-8 py-3 font-semibold text-white hover:bg-yellow-700 transition"
           >
             Contact
           </Link>
           <Link
             href="/portfolio"
-            className="rounded-2xl border border-yellow-600 px-8 py-3 font-semibold text-white hover:bg-white hover:text-black transition"
+            className="rounded-2xl border border-yellow-500 px-8 py-3 font-semibold text-white hover:bg-white hover:text-black transition"
           >
             Portfolio
           </Link>

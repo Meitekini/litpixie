@@ -1,5 +1,8 @@
 import RecentWorks from "@/components/shared/recent-works";
 import Portfolio from "@/components/shared/portfolio";
+import MonthlyActivity from "@/components/shared/monthly-activity";
+import Contacts from "@/components/shared/contacts";
+import About from "@/components/shared/about";
 import { sampleImages } from "@/types";
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +15,7 @@ export default function Home() {
         <div className=" max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
           <RecentWorks />
         </div>
-      </section>
+      </section>     
 
       <section className="max-w-screen-xl bg-gradient-to-b from-gray-50 via-gray-600 to-gray-50 px-4 py-8 sm:px-6 lg:px-8">
         <h1 className="mx-12 text-3xl font-semibold text-gray-800 uppercase mt-6 p-4">
@@ -30,21 +33,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white rounded-xl shadow p-6">
-        <h2 className="text-xl font-semibold mb-4">
-          More Content (Scroll to Test)
-        </h2>
-        <p className="text-gray-700 mb-4">
-          Paste or generate more content here to see how the footer behaves when
-          the page becomes taller than the viewport.
-        </p>
-        <p className="text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet,
-          pariatur.
-        </p>
-        <p className="text-gray-700 mt-2">
-          (Add many paragraphs to test long pages)
-        </p>
+      <section  className="max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 bg-white">
+       <h1 className="mx-12 text-3xl font-semibold text-gray-800 uppercase my-6 p-4">
+          Monthly Activity
+        </h1>
+       
+        <MonthlyActivity />
+      </section>
+      <section id="contacts" className="max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 bg-white">
+        <h2 className="mx-12 text-3xl font-semibold text-gray-800 uppercase my-6 p-4">
+         Contacts
+        </h2>       
+        
+       <Contacts/>
       </section>
     </>
   );

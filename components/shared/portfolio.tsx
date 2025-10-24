@@ -1,5 +1,6 @@
 import React from "react";
-import type { Gallery, GalleryImage } from "@/types";
+import type { Album, Gallery, GalleryImage } from "@/types";
+import Image from "next/image";
 
 interface Props {
   gallery: Gallery[];
@@ -7,7 +8,7 @@ interface Props {
 
 const flattenImages = (gallery: Gallery): GalleryImage[] => {
   const albumImages: GalleryImage[] =
-    gallery.albums?.flatMap((album: any) => album.images) ?? [];
+    gallery.albums?.flatMap((album: Album) => album.images) ?? [];
 
   const galleryImages: GalleryImage[] = gallery.images ?? [];
 
@@ -21,11 +22,14 @@ const Portfolio: React.FC<Props> = ({ gallery }) => {
     <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 overflow-hidden gap-4 p-4">
       {images.map((img) => (
         <div key={img.id} className="mb-4 break-inside-avoid">
+          <picture>
           <img
             src={img.src}
             alt={img.alt}
+            
             className="w-auto rounded-lg shadow-md"
           />
+          </picture>
           <h3 className="text-base font-semibold mt-2">{img.title}</h3>
           <p className="text-sm text-gray-600">{img.caption}</p>
         </div>
@@ -35,4 +39,3 @@ const Portfolio: React.FC<Props> = ({ gallery }) => {
 };
 
 export default Portfolio;
-

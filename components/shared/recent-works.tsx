@@ -67,9 +67,7 @@ const categories = [
 
 export default function RecentWorks() {
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
+  const [current, setCurrent] = useState(0); 
   const plugin = useRef(
     Autoplay({
       delay: 3500,
@@ -80,7 +78,7 @@ export default function RecentWorks() {
 
   useEffect(() => {
     if (!api) return;
-    setCount(api.scrollSnapList().length);
+    
     setCurrent(api.selectedScrollSnap());
     api.on("select", () => setCurrent(api.selectedScrollSnap()));
   }, [api]);
