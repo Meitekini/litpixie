@@ -1,0 +1,74 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum ImageOrientation {
+  landscape
+  portrait
+  square
+}
+
+model GalleryImage {
+  id            String           @id @default(uuid())
+  src           String
+  alt           String
+  title         String?
+  caption       String?
+  photographer  String?
+  tags          String[]         // Postgres: text[]; use Json for MySQL/SQLite
+  category      String?
+  createdAt     DateTime         @default(now())
+
+  width         Int?
+  height        Int?
+  aspectRatio   Float?
+  orientation   ImageOrientation?
+  dominantColor String?
+
+  likes         Int?             @default(0)
+  views         Int?             @default(0)
+
+  camera        String?
+  lens          String?
+  aperture      String?
+  shutterSpeed  String?
+  iso           Int?
+  latitude      Float?
+  longitude     Float?
+
+  albumId       String?
+  album         Album?           @relation(fields: [albumId], references: [id])
+  galleryId     String?
+  gallery       Gallery?         @relation(fields: [galleryId], references: [id])
+
+  coverOf       Album?           @relation("AlbumCover")
+}
+
+model Album {
+  id            String           @id @default(uuid())
+  name          String
+  description   String?
+  createdAt     DateTime         @default(now())
+
+  coverImageId  String?          @unique
+  coverImage    GalleryImage?    @relation("AlbumCover", fields: [coverImageId], references: [id])
+
+  images        GalleryImage[]   // one-to-many: Album -> GalleryImage
+  galleryId     String?
+  gallery       Gallery?         @relation(fields: [galleryId], references: [id])
+}
+
+model Gallery {
+  id            String           @id @default(uuid())
+  name          String
+  description   String?
+  createdAt     DateTime         @default(now())
+
+  albums        Album[]
+  images        GalleryImage[]
+}
