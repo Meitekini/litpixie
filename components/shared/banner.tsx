@@ -94,7 +94,7 @@ export default function Banner() {
               </Link>
             </li>           
             <li>
-              <Link href="#contacts" className="hover:text-gray-300 transition">
+              <Link href="/contacts" className="hover:text-gray-300 transition">
                 Contact
               </Link>
             </li>
