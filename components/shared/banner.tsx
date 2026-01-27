@@ -168,8 +168,7 @@ export default function Banner() {
                   </Link>
                 </li>
                  <li>
-              <Link href="/about" className="hover:text-gray-300 transition">
-              onClick={() => setMenuOpen(false)}
+              <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-gray-300 transition">
                 About
               </Link>
             </li>
